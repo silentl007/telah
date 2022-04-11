@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:telah/customwidgets.dart';
 import 'package:telah/sizemodel.dart';
+import 'package:telah/welcomeuser.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -18,18 +19,19 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     Sizes().heightSizeCalc(context);
     Sizes().widthSizeCalc(context);
+    final node = FocusScope.of(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Colors.white,
+        //   elevation: 0,
+        // ),
         body: MediaQuery(
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
           child: Padding(
             padding: EdgeInsets.only(
-                top: Sizes.h10,
+                top: Sizes.h70,
                 left: Sizes.w20,
                 right: Sizes.w20,
                 bottom: Sizes.w10),
@@ -64,11 +66,14 @@ class _LoginState extends State<Login> {
                         } else if (!value!.contains('@')) {
                           return 'Enter valid email address';
                         } else if (value.trim().isEmpty) {
-                          return 'please enter password';
+                          return 'please enter email';
                         }
 
                         return null;
                       },
+                      style: TextStyle(fontSize: Sizes.w13),
+                      textInputAction: TextInputAction.next,
+                      onEditingComplete: () => node.nextFocus(),
                       decoration: InputDecoration(
                         labelText: 'Email',
                         labelStyle: TextStyle(fontSize: Sizes.w13),
@@ -100,8 +105,11 @@ class _LoginState extends State<Login> {
 
                         return null;
                       },
+                      textInputAction: TextInputAction.done,
+                      onEditingComplete: () => node.unfocus(),
                       obscureText: hideText,
                       obscuringCharacter: '●',
+                      style: TextStyle(fontSize: Sizes.w13),
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                             onPressed: () {
@@ -172,12 +180,17 @@ class _LoginState extends State<Login> {
                             fontWeight: FontWeight.bold))
                   ],
                 ),
-                customDivider(),
+                customDivider(height: Sizes.h250),
                 UserWidgets().button(
-                    context: context, function: proceed, buttonText: 'Log In'),
-                customDivider(),
+                    context: context,
+                    function: proceed,
+                    buttonText: 'Log In',
+                    buttonHeight: Sizes.h50,
+                    buttonTextSize: Sizes.w18),
+                customDivider(height: Sizes.h20),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Don't have an account?",
                         style:
@@ -196,5 +209,8 @@ class _LoginState extends State<Login> {
     );
   }
 
-  proceed() {}
+  proceed() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const WelcomeUser()));
+  }
 }

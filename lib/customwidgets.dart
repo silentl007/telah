@@ -5,21 +5,25 @@ class UserWidgets {
   button(
       {required BuildContext context,
       required Function function,
+      double? buttonHeight,
+      double? buttonTextSize,
+      Color? buttonColor,
       String? buttonText}) {
     Sizes().heightSizeCalc(context);
     Sizes().widthSizeCalc(context);
     return SizedBox(
-      height: Sizes.h40,
+      height: buttonHeight ?? Sizes.h40,
       width: double.infinity,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
+              primary: buttonColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(Sizes.w15)))),
           onPressed: () {
             function();
           },
           child: Text(buttonText ?? 'Proceed',
-              style: TextStyle(fontSize: Sizes.w13))),
+              style: TextStyle(fontSize: buttonTextSize ?? Sizes.w13))),
     );
   }
 }
