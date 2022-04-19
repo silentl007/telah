@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:telah/customwidgets.dart';
 import 'package:telah/sizemodel.dart';
+import 'package:telah/user/dashboard.dart';
 
 class LinkAccount extends StatefulWidget {
   const LinkAccount({Key? key}) : super(key: key);
@@ -103,7 +104,7 @@ class _LinkAccountState extends State<LinkAccount> {
                 customDivider(height: Sizes.h250),
                 UserWidgets().button(
                     context: context,
-                    function: () {},
+                    function: optionSelected == 'Select' ? () {} : proceed,
                     buttonHeight: Sizes.h50,
                     buttonColor: optionSelected == 'Select'
                         ? Colors.blue.withOpacity(.4)
@@ -132,6 +133,8 @@ class _LinkAccountState extends State<LinkAccount> {
 // tell user to select
     } else {
       // continue
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const Dashboard()));
     }
   }
 

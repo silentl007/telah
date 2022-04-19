@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:telah/customwidgets.dart';
+import 'package:telah/options.dart';
 import 'package:telah/sizemodel.dart';
 import 'package:telah/welcomeuser.dart';
 
@@ -200,9 +201,14 @@ class _LoginState extends State<Login> {
                           style: TextStyle(
                               color: Colors.grey, fontSize: Sizes.w15)),
                       customVerticalDivider(),
-                      Text("Sign up",
-                          style: TextStyle(
-                              color: Colors.blue, fontSize: Sizes.w15))
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const SelectType()));
+                        },
+                        child: Text("Sign up",
+                            style: TextStyle(
+                                color: Colors.blue, fontSize: Sizes.w15)),
+                      )
                     ],
                   )
                 ]),
