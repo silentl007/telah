@@ -8,8 +8,22 @@ class AssetsPath {
   static const String ledger = 'assets/icons/ledger.png';
   static const String more = 'assets/icons/more.png';
   static const String property = 'assets/icons/property.png';
+  static const String propertyunit = 'assets/icons/propertyunit.png';
   static const String rem = 'assets/icons/rem.png';
   static const String users = 'assets/icons/users.png';
+  static const String john2 = 'assets/icons/john2.png';
+  static const String expire = 'assets/icons/expire.png';
+  static const String arrowdown = 'assets/icons/arrow-down.png';
+  static const String copy = 'assets/icons/copy.png';
+  static const String add1 = 'assets/icons/add1.png';
+  static const String clipboard = 'assets/icons/clipboard.png';
+  static const String clock = 'assets/icons/clock.png';
+  static const String profileadd = 'assets/icons/profileadd.png';
+  static const String profileremove = 'assets/icons/profileremove.png';
+  static const String quitnotice = 'assets/icons/quitnotice.png';
+  static const String trans = 'assets/icons/trans.png';
   static const String walletmenu = 'assets/icons/wallet_menu.png';
   static const String wallet = 'assets/icons/wallet.png';
+  static const String wallet2 = 'assets/icons/wallet2.png';
+  static const String john = 'assets/images/john.png';
 }

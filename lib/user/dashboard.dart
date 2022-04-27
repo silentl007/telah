@@ -139,7 +139,7 @@ class _DashboardState extends State<Dashboard> {
                 .toList()),
         body: WillPopScope(
             onWillPop: () async {
-              return false;
+              return true;
             },
             child: screens[_currentIndex]),
       ),

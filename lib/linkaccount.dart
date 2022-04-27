@@ -45,7 +45,7 @@ class _LinkAccountState extends State<LinkAccount> {
                 //placeholder user profile picture
                 Center(
                   child: Image.asset(
-                    'assets/images/house.png',
+                    'assets/images/john.png',
                     width: Sizes.w70,
                   ),
                 ),

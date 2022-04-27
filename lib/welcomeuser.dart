@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:telah/agent/agentdashboard.dart';
+import 'package:telah/assets.dart';
 import 'package:telah/customwidgets.dart';
 import 'package:telah/linkaccount.dart';
 import 'package:telah/login.dart';
@@ -45,9 +47,12 @@ class _WelcomeUserState extends State<WelcomeUser> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         //placeholder user profile picture
-                        Image.asset(
-                          'assets/images/house.png',
-                          width: Sizes.w60,
+                        ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(Sizes.w10)),
+                          child: Image.asset(
+                            AssetsPath.john,
+                            width: Sizes.w60,
+                          ),
                         ),
                         customDivider(height: Sizes.h20),
                         Text(
@@ -103,6 +108,6 @@ class _WelcomeUserState extends State<WelcomeUser> {
 
   proceed() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const LinkAccount()));
+        .push(MaterialPageRoute(builder: (context) => const AgentDashboard()));
   }
 }
