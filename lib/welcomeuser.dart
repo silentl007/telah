@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:telah/agent/agentdashboard.dart';
 import 'package:telah/assets.dart';
 import 'package:telah/customwidgets.dart';
-import 'package:telah/linkaccount.dart';
+// import 'package:telah/linkaccount.dart';
 import 'package:telah/login.dart';
 import 'package:telah/sizemodel.dart';
 
@@ -46,7 +46,7 @@ class _WelcomeUserState extends State<WelcomeUser> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        //placeholder user profile picture
+                        
                         ClipRRect(
                           borderRadius: BorderRadius.all(Radius.circular(Sizes.w10)),
                           child: Image.asset(

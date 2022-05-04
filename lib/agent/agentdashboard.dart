@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:telah/agent/screens/messages.dart';
+import 'package:telah/agent/screens/noproperty.dart';
 import 'package:telah/agent/screens/notifications.dart';
 import 'package:telah/agent/screens/agentdash.dart';
 import 'package:telah/assets.dart';
@@ -16,6 +15,7 @@ class AgentDashboard extends StatefulWidget {
 }
 
 class _AgentDashboardState extends State<AgentDashboard> {
+  bool? haveProperty = true;
   int _currentIndex = 0;
   List<BottomNav> bottomNav = [
     BottomNav(iconPath: AssetsPath.dashboard, name: 'Dashboard'),
@@ -90,10 +90,21 @@ class _AgentDashboardState extends State<AgentDashboard> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ImageIcon(
-                    const AssetImage(AssetsPath.copy),
-                    color: Colors.black,
-                    size: Sizes.w25,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        if(haveProperty!){
+                          haveProperty = false;
+                        } else {
+                          haveProperty = true;
+                        }
+                      });
+                    },
+                    child: ImageIcon(
+                      const AssetImage(AssetsPath.copy),
+                      color: Colors.black,
+                      size: Sizes.w25,
+                    ),
                   ),
                   customVerticalDivider(width: Sizes.w15),
                   Image.asset(
@@ -134,7 +145,9 @@ class _AgentDashboardState extends State<AgentDashboard> {
             onWillPop: () async {
               return true;
             },
-            child: screens[_currentIndex]),
+            child: _currentIndex == 0 && haveProperty == false
+                ? const NoProperty()
+                : screens[_currentIndex]),
       ),
     );
   }

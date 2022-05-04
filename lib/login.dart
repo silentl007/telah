@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:telah/customwidgets.dart';
 import 'package:telah/options.dart';
@@ -13,6 +12,11 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   bool hideText = true;
   IconData visibility = Icons.visibility;
   bool check = false;
@@ -61,97 +65,91 @@ class _LoginState extends State<Login> {
                     style: TextStyle(color: Colors.grey, fontSize: Sizes.w15),
                   ),
                   customDivider(height: Sizes.h30),
-                  SizedBox(
-                    height: Sizes.h45,
-                    child: TextFormField(
-                        validator: (value) {
-                          if (value != null && value.trim().length < 3) {
-                            return 'This field requires a minimum of 3 characters';
-                          } else if (!value!.contains('@')) {
-                            return 'Enter valid email address';
-                          } else if (value.trim().isEmpty) {
-                            return 'please enter email';
-                          }
+                  TextFormField(
+                      validator: (value) {
+                        if (value != null && value.trim().length < 3) {
+                          return 'This field requires a minimum of 3 characters';
+                        } else if (!value!.contains('@')) {
+                          return 'Enter valid email address';
+                        } else if (value.trim().isEmpty) {
+                          return 'please enter email';
+                        }
 
-                          return null;
-                        },
-                        style: TextStyle(fontSize: Sizes.w13),
-                        textInputAction: TextInputAction.next,
-                        onEditingComplete: () => node.nextFocus(),
-                        decoration: InputDecoration(
-                          labelText: 'Email',
-                          labelStyle: TextStyle(fontSize: Sizes.w13),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(Sizes.w10))),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.blue,
-                              ),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(Sizes.w10))),
-                          errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.red,
-                              ),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(Sizes.w10))),
-                        )),
-                  ),
+                        return null;
+                      },
+                      style: TextStyle(fontSize: Sizes.w13),
+                      textInputAction: TextInputAction.next,
+                      onEditingComplete: () => node.nextFocus(),
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        labelStyle: TextStyle(fontSize: Sizes.w13),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(Sizes.w10))),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.blue,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(Sizes.w10))),
+                        errorBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.red,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(Sizes.w10))),
+                      )),
                   customDivider(height: Sizes.h25),
-                  SizedBox(
-                    height: Sizes.h45,
-                    child: TextFormField(
-                        validator: (value) {
-                          if (value != null && value.trim().isEmpty) {
-                            return 'please enter password';
-                          }
+                  TextFormField(
+                      validator: (value) {
+                        if (value != null && value.trim().isEmpty) {
+                          return 'please enter password';
+                        }
 
-                          return null;
-                        },
-                        textInputAction: TextInputAction.done,
-                        onEditingComplete: () => node.unfocus(),
-                        obscureText: hideText,
-                        obscuringCharacter: '●',
-                        style: TextStyle(fontSize: Sizes.w13),
-                        decoration: InputDecoration(
-                          suffixIcon: IconButton(
-                              onPressed: () {
-                                if (hideText) {
-                                  setState(() {
-                                    hideText = false;
-                                    visibility = Icons.visibility_off;
-                                  });
-                                } else {
-                                  setState(() {
-                                    hideText = true;
-                                    visibility = Icons.visibility;
-                                  });
-                                }
-                              },
-                              icon: Icon(
-                                visibility,
-                                color: Colors.black54,
-                              )),
-                          labelText: 'Password',
-                          labelStyle: TextStyle(fontSize: Sizes.w13),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(Sizes.w10))),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.blue,
-                              ),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(Sizes.w10))),
-                          errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.red,
-                              ),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(Sizes.w10))),
-                        )),
-                  ),
+                        return null;
+                      },
+                      textInputAction: TextInputAction.done,
+                      onEditingComplete: () => node.unfocus(),
+                      obscureText: hideText,
+                      obscuringCharacter: '●',
+                      style: TextStyle(fontSize: Sizes.w13),
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              if (hideText) {
+                                setState(() {
+                                  hideText = false;
+                                  visibility = Icons.visibility_off;
+                                });
+                              } else {
+                                setState(() {
+                                  hideText = true;
+                                  visibility = Icons.visibility;
+                                });
+                              }
+                            },
+                            icon: Icon(
+                              visibility,
+                              color: Colors.black54,
+                            )),
+                        labelText: 'Password',
+                        labelStyle: TextStyle(fontSize: Sizes.w13),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(Sizes.w10))),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.blue,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(Sizes.w10))),
+                        errorBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.red,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(Sizes.w10))),
+                      )),
                   customDivider(height: Sizes.h15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -202,8 +200,9 @@ class _LoginState extends State<Login> {
                               color: Colors.grey, fontSize: Sizes.w15)),
                       customVerticalDivider(),
                       GestureDetector(
-                        onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const SelectType()));
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const SelectType()));
                         },
                         child: Text("Sign up",
                             style: TextStyle(

@@ -1,11 +1,5 @@
-import 'dart:ui';
-
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:telah/assets.dart';
 import 'package:telah/customwidgets.dart';
 import 'package:telah/sizemodel.dart';

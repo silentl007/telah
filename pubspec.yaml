@@ -11,6 +11,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.0.0
   badges: ^2.0.2
+  flutter_background_service: ^2.0.0
+  android_autostart: ^0.0.3
+  auto_start_flutter: ^0.0.1
+  smart_grid_view: ^0.2.1
+  file_picker: ^4.5.1
+  # file_picker_cross: ^4.6.0
+  # image_picker: ^0.6.7+6
+  # flutter_background_service:
+  #   path: ../packages/flutter_background_service/
+  device_info_plus: ^3.2.3
 
 dev_dependencies:
   flutter_test:

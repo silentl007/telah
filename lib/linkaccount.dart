@@ -42,7 +42,7 @@ class _LinkAccountState extends State<LinkAccount> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                //placeholder user profile picture
+                
                 Center(
                   child: Image.asset(
                     'assets/images/john.png',
