@@ -29,10 +29,6 @@ class _LoginState extends State<Login> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        // appBar: AppBar(
-        //   backgroundColor: Colors.white,
-        //   elevation: 0,
-        // ),
         body: MediaQuery(
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
           child: Padding(

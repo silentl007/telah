@@ -31,16 +31,13 @@ class Decor {
   }
 
   formDecor(
-      {required BuildContext context, String? labelText, Widget? suffix}) {
+      {required BuildContext context, String? labelText, Widget? suffix, Widget? prefixIcon, String? prefixText}) {
     Sizes().heightSizeCalc(context);
     Sizes().widthSizeCalc(context);
     return InputDecoration(
       suffixIcon: suffix,
-      // suffixIconConstraints: BoxConstraints(
-      //                 minHeight: 24,
-      //                 minWidth: 24
-      //               ),
-      // suffixIconColor: Colors.red,
+      prefixIcon: prefixIcon,
+      prefixText: prefixText,
       labelText: labelText,
       labelStyle: TextStyle(fontSize: Sizes.w13),
       border: OutlineInputBorder(

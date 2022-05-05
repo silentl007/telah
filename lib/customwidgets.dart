@@ -2,6 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:telah/sizemodel.dart';
 
 class UserWidgets {
+  appbar(
+      {required BuildContext context,
+      String? title,
+      bool hasAction = false,
+      List<Widget>? action}) {
+    return AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          )),
+      title: Text(
+        title ?? '',
+        style:
+            const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+      ),
+      actions: hasAction ? action : [],
+    );
+  }
+
   button(
       {required BuildContext context,
       required Function function,
