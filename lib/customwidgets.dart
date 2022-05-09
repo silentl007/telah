@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:number_display/number_display.dart';
 import 'package:telah/sizemodel.dart';
 
 class UserWidgets {
+  final displayNumber = createDisplay(
+  length: 19,
+  decimal: 2,
+  decimalPoint: '.',
+);
   appbar(
       {required BuildContext context,
       String? title,
@@ -54,6 +60,8 @@ class UserWidgets {
 }
 
 class Decorations {}
+
+
 
 customDivider({double? height, Color? color}) {
   return Divider(

@@ -4,7 +4,6 @@ import 'package:telah/assets.dart';
 import 'package:telah/common/decor.dart';
 import 'package:telah/customwidgets.dart';
 import 'package:telah/sizemodel.dart';
-import 'package:telah/user/screens/user.dart';
 
 class ManageUsers extends StatefulWidget {
   const ManageUsers({Key? key}) : super(key: key);

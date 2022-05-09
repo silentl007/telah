@@ -9,6 +9,7 @@
 .history
 .svn/
 
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -27,10 +28,12 @@
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
+/libs/
 .pub-cache/
 .pub/
 /build/
-/android/app/build/
+# **/android/app/build/
+
 
 # Web related
 lib/generated_plugin_registrant.dart

@@ -56,7 +56,6 @@ class _PropertyDetailsState extends State<PropertyDetails> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                
                 LinearProgressIndicator(
                   backgroundColor: Colors.grey.withOpacity(.5),
                   valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
@@ -120,40 +119,44 @@ class _PropertyDetailsState extends State<PropertyDetails> {
               topLeft: Radius.circular(Sizes.w20)),
         ),
         builder: (context) {
-          return SizedBox(
-            height: Sizes.h250,
-            child: Padding(
-              padding: EdgeInsets.only(top: Sizes.h30, left: Sizes.w15, right: Sizes.w15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Add property detail',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: Sizes.w20),
-                  ),
-                  customDivider(height: Sizes.h25),
-                  TextFormField(
-                    style: TextStyle(fontSize: Sizes.w13),
-                    textInputAction: TextInputAction.done,
-                    decoration: Decor()
-                        .formDecor(context: context, labelText: 'Name'),
-                  ),
-                  customDivider(height: Sizes.h25),
-                  SizedBox(
-                    height: Sizes.h50,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                        style: Decor().buttonDecor(context: context),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text(
-                          'Proceed',
-                          style: TextStyle(fontSize: Sizes.w20),
-                        )),
-                  )
-                ],
+          return Padding(
+            padding: MediaQuery.of(context).viewInsets,
+            child: SizedBox(
+              height: Sizes.h250,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    top: Sizes.h30, left: Sizes.w15, right: Sizes.w15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Add property detail',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: Sizes.w20),
+                    ),
+                    customDivider(height: Sizes.h25),
+                    TextFormField(
+                      style: TextStyle(fontSize: Sizes.w13),
+                      textInputAction: TextInputAction.done,
+                      decoration: Decor()
+                          .formDecor(context: context, labelText: 'Name'),
+                    ),
+                    customDivider(height: Sizes.h25),
+                    SizedBox(
+                      height: Sizes.h50,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          style: Decor().buttonDecor(context: context),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                            'Proceed',
+                            style: TextStyle(fontSize: Sizes.w20),
+                          )),
+                    )
+                  ],
+                ),
               ),
             ),
           );

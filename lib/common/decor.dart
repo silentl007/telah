@@ -5,6 +5,20 @@ import 'package:flutter/services.dart';
 import 'package:telah/sizemodel.dart';
 
 class Decor {
+  container(
+      {required BuildContext context,
+      double? bordercurve,
+      Color? color,
+      Color? borderColor}) {
+    Sizes().heightSizeCalc(context);
+    Sizes().widthSizeCalc(context);
+    return BoxDecoration(
+        border: Border.all(color: borderColor ?? Colors.grey.withOpacity(.3)),
+        color: color ?? Colors.white,
+        borderRadius:
+            BorderRadius.all(Radius.circular(bordercurve ?? Sizes.w20)));
+  }
+
   buttonDecor(
       {Color? buttoncolor,
       Color? bordercolor,
@@ -31,7 +45,11 @@ class Decor {
   }
 
   formDecor(
-      {required BuildContext context, String? labelText, Widget? suffix, Widget? prefixIcon, String? prefixText}) {
+      {required BuildContext context,
+      String? labelText,
+      Widget? suffix,
+      Widget? prefixIcon,
+      String? prefixText}) {
     Sizes().heightSizeCalc(context);
     Sizes().widthSizeCalc(context);
     return InputDecoration(
@@ -55,6 +73,7 @@ class Decor {
     );
   }
 }
+
 class ThousandsSeparatorInputFormatter extends TextInputFormatter {
   static const separator = ','; // Change this to '.' for other locales
 

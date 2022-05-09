@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:telah/customwidgets.dart';
+import 'package:telah/estates/property.dart';
 import 'package:telah/options.dart';
 import 'package:telah/sizemodel.dart';
-import 'package:telah/welcomeuser.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -216,12 +216,16 @@ class _LoginState extends State<Login> {
   }
 
   proceed() {
-    final keyForm = _formkey.currentState;
-    if (keyForm!.validate()) {
-      // to save
-      keyForm.save();
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const WelcomeUser()));
-    }
+    Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const PropertyManage()));
+    // Navigator.of(context)
+    //     .push(MaterialPageRoute(builder: (context) => const WelcomeUser()));
+    // final keyForm = _formkey.currentState;
+    // if (keyForm!.validate()) {
+    //   // to save
+    //   keyForm.save();
+    //   Navigator.of(context)
+    //       .push(MaterialPageRoute(builder: (context) => const WelcomeUser()));
+    // }
   }
 }

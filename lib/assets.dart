@@ -5,9 +5,17 @@ class AssetsPath {
   static const String expenditure = 'assets/icons/expenditure.png';
   static const String env = 'assets/icons/env.png';
   static const String house = 'assets/icons/house.png';
+  static const String propertyunitadd = 'assets/icons/propertyunitadd.png';
+  static const String checkgreen = 'assets/icons/checkgreen.png';
+  static const String checkgrey = 'assets/icons/checkgrey.png';
+  static const String services = 'assets/icons/services.png';
+  static const String servicecharge = 'assets/icons/servicecharge.png';
+  static const String houseproperty = 'assets/images/houseproperty.png';
+  static const String success = 'assets/images/success.png';
   static const String ledger = 'assets/icons/ledger.png';
   static const String more = 'assets/icons/more.png';
   static const String property = 'assets/icons/property.png';
+  static const String propertymanage = 'assets/icons/propertymanage.png';
   static const String propertyunit = 'assets/icons/propertyunit.png';
   static const String rem = 'assets/icons/rem.png';
   static const String users = 'assets/icons/users.png';
@@ -35,6 +43,9 @@ class AssetsPath {
   static const String email = 'assets/icons/email.png';
   static const String camera = 'assets/icons/camera.png';
   static const String naija = 'assets/icons/naija.png';
+  static const String naira = 'assets/icons/naira.png';
+  static const String paymentmode = 'assets/icons/paymentmode.png';
+  static const String accountdetails = 'assets/icons/accountdetails.png';
   static const String search = 'assets/icons/search.png';
   static const String walletmenu = 'assets/icons/wallet_menu.png';
   static const String arrowright = 'assets/icons/arrow-circle-right.png';
